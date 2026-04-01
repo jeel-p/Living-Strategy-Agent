@@ -1,0 +1,52 @@
+{
+  "name": "living-strategy-agent",
+  "version": "1.0.0",
+  "description": "CLI to install and verify the Living Strategy Agent — a Claude/OpenClaw-style skill for weekly marketing strategy briefs, trend signals, and custom source watchlists.",
+  "keywords": [
+    "claude",
+    "openclaw",
+    "skill",
+    "marketing",
+    "strategy",
+    "brief",
+    "cli",
+    "installer"
+  ],
+  "license": "MIT",
+  "author": "jeel-p",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeel-p/Living-Strategy-Agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeel-p/Living-Strategy-Agent/issues"
+  },
+  "homepage": "https://github.com/jeel-p/Living-Strategy-Agent#readme",
+  "engines": {
+    "node": ">=16.7.0"
+  },
+  "bin": {
+    "living-strategy-agent": "bin/living-strategy-agent.js"
+  },
+  "main": "lib/cli.js",
+  "files": [
+    "bin",
+    "cli",
+    "lib",
+    ".claude",
+    "skill.json",
+    "CLAUDE.md",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "verify": "node bin/living-strategy-agent.js verify",
+    "doctor": "node bin/living-strategy-agent.js doctor",
+    "export": "node bin/living-strategy-agent.js export",
+    "prepack": "node bin/living-strategy-agent.js verify"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

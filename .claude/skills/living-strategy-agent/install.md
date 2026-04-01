@@ -1,6 +1,6 @@
 # Install — use this skill in another project
 
-If your environment supports it, you can install via **npx** from GitHub or npm — see the **Install** section in the repository [`README.md`](https://github.com/jeel-p/Living-Strategy-Agent/blob/main/README.md) (`help`, `install`, `verify`).
+If your environment supports it, you can install via the **Node CLI** (`living-strategy-agent install`) — see the **Install** and **CLI usage** sections in the repository [`README.md`](https://github.com/jeel-p/Living-Strategy-Agent/blob/main/README.md). Commands: `help`, `install`, `verify`, `doctor`, `export`.
 
 ## Copy the skill folder
 

@@ -4,3 +4,8 @@ venv/
 __pycache__/
 *.pyc
 optional-runtime/data/
+
+node_modules/
+dist/
+*.tgz
+npm-debug.log*

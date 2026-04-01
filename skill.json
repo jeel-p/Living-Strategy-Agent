@@ -100,5 +100,11 @@
     "skill_md": ".claude/skills/living-strategy-agent/SKILL.md",
     "docs": "docs/",
     "optional_automation": "optional-runtime/"
+  },
+  "cli": {
+    "bin": "living-strategy-agent",
+    "package_name": "living-strategy-agent",
+    "repository": "https://github.com/jeel-p/Living-Strategy-Agent",
+    "install_target_subpath": ".claude/skills/living-strategy-agent/"
   }
 }
