@@ -1,0 +1,44 @@
+{
+  "client_id": "default",
+  "week_date": "2026-04-01",
+  "industry": "Consumer brand",
+  "markets": "KSA, UAE",
+  "source_scope": "open",
+  "custom_sources": {
+    "websites": [
+      "https://brand.example",
+      "https://ksa.brand.example/ramadan-2026",
+      "https://campaign.example/eid-gifting"
+    ],
+    "usernames": [
+      "TikTok @brand_official",
+      "Instagram @brand_mena",
+      "TikTok @creator_partner_1",
+      "X @category_watch"
+    ],
+    "competitors": [
+      "https://rival-a.example",
+      "Instagram @rival_official",
+      "Instagram @rival_mena_popups"
+    ],
+    "communities": [
+      "r/gulfconsumer",
+      "Discord #competitor-alerts (internal)"
+    ],
+    "newsletters": [
+      "Retail Pulse MENA",
+      "Category Weekly"
+    ],
+    "keywords": [
+      "هدايا العيد",
+      "Ramadan skincare",
+      "UGC challenge"
+    ],
+    "notes": "Prioritize signals observable from the listed handles and competitor sites; regional landing pages are the canonical campaign references."
+  },
+  "trends": "Short-form video growth in KSA; Ramadan gifting search spike week-over-week; one competitor UGC challenge gaining traction among listed TikTok creators.",
+  "events": "Regional holiday moments; competitor spring campaign teasers (see @rival_official Reels).",
+  "competitors": "Competitor A increased paid social in UAE; Competitor B launched UGC challenge tied to creators on the custom_sources list.",
+  "brand_context": "Focus on awareness and consideration; limited new creative until Eid wave; align messaging with ksa.brand.example campaign landing page.",
+  "feedback_last_week": "Top recommendation was to test Reels hooks in UAE; early CTR +12%, conversion flat."
+}

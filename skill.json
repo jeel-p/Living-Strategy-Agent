@@ -1,0 +1,104 @@
+{
+  "name": "living-strategy-agent",
+  "version": "1.0.0",
+  "description": "Builds a living strategy agent that turns weekly trend signals into prioritized, repeatable marketing strategy briefs with a fixed section structure, strong specificity rules, and optional memory across weeks.",
+  "author": "",
+  "license": "MIT",
+  "triggers": [
+    "strategy agent",
+    "living strategy",
+    "weekly marketing brief",
+    "trend monitoring agent",
+    "AI marketing advisor",
+    "automated strategy",
+    "competitive intelligence agent",
+    "market changes",
+    "real-time marketing guidance"
+  ],
+  "when_to_use": [
+    "User wants an AI or workflow that monitors trends and recommends actions",
+    "User wants weekly or recurring marketing strategy briefs",
+    "User wants to automate or structure competitive intelligence into next steps",
+    "User describes struggling to keep up with market or cultural shifts"
+  ],
+  "tags": [
+    "marketing",
+    "strategy",
+    "brief",
+    "weekly",
+    "trends",
+    "competitive-intelligence",
+    "B2B",
+    "B2C",
+    "memory",
+    "system-prompt",
+    "custom-sources",
+    "watchlist",
+    "urls",
+    "social-handles"
+  ],
+  "inputs": {
+    "required_for_tailoring": [
+      "industry",
+      "markets",
+      "cadence",
+      "output_format",
+      "client_type",
+      "data_sources"
+    ],
+    "per_brief": [
+      "trends",
+      "events",
+      "competitors",
+      "brand_context",
+      "custom_sources"
+    ],
+    "optional": [
+      "feedback_last_week",
+      "past_briefs_memory",
+      "compliance_note",
+      "source_scope"
+    ],
+    "custom_sources_shape": {
+      "description": "Optional object with string arrays (and optional string notes): websites, usernames, competitors, communities, newsletters, keywords; notes string or list.",
+      "source_scope": "open | provided_only — whether custom_sources is priority-only or exclusive monitoring set for the run"
+    },
+    "defaults_if_just_build_it": {
+      "industry": "Consumer brand",
+      "markets": "Generic / configurable",
+      "cadence": "Weekly",
+      "output_format": "Web viewer + Email",
+      "data_sources": "Manual inputs (MVP approach)"
+    }
+  },
+  "outputs": {
+    "brief_sections_in_order": [
+      "Week headline (H1)",
+      "Strategic read",
+      "Trend signals (ranked by urgency)",
+      "Priority actions: Do immediately (48h), Do this week, Watch and hold",
+      "Budget and channel guidance",
+      "What NOT to do this week",
+      "Next week setup"
+    ],
+    "deliverable_bundle_order": [
+      "Working HTML prototype (when building an agent)",
+      "System prompt (copyable / file)",
+      "Build roadmap",
+      "Next-step offer (Sheet, Notion, optional automation)"
+    ],
+    "quality_bar": [
+      "Named platforms and markets (no generic social advice)",
+      "When custom_sources provided: preserve source names (URLs, handles, communities, newsletters)",
+      "What NOT to do present",
+      "Readable in under 3 minutes",
+      "Single clear #1 for next 48 hours",
+      "Memory format when history applies"
+    ]
+  },
+  "paths": {
+    "skill_md": ".claude/skills/living-strategy-agent/SKILL.md",
+    "docs": "docs/",
+    "optional_automation": "optional-runtime/"
+  }
+}
