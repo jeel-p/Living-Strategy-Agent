@@ -23,6 +23,12 @@ This skill is **usable without any backend, database, API server, or `.env`**. A
 
 ---
 
+## Examples (user-facing prompts)
+
+See **`examples.md`** in this folder for copy-paste prompts: quick start, full configuration, weekly brief-only runs, industry-specific (E-commerce, B2B SaaS, consumer, healthcare, finance), `custom_sources`, memory-aware runs, and output constraints (email-ready, geography-only, under 3 minutes).
+
+---
+
 ## When to use this skill (triggers)
 
 Activate when the user wants any of the following, or describes adjacent problems:

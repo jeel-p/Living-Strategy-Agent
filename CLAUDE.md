@@ -42,7 +42,8 @@ The core product is **not** a backend service, scheduled job, or database. Do no
 |------|------|
 | `SKILL.md` | Full skill definition and system prompt template |
 | `outputs.md` | Exact brief structure |
-| `examples.md` | Invocation patterns |
+| `examples.md` | Copy-paste user prompts (setup vs weekly brief, industries, `custom_sources`, memory, output constraints) |
+| `inputs.md` | Configuration and `custom_sources` shape |
 | `docs/customization-guide.md` | Industry-specific overlays |
 
 ## Optional runtime

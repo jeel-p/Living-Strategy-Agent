@@ -1,5 +1,7 @@
 # Inputs — required and optional configuration
 
+Prompt patterns that use these fields (including `custom_sources`) are in **`examples.md`** in this folder.
+
 ## Required to tailor the agent (ask if missing)
 
 | Input | Description |

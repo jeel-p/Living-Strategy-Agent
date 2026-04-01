@@ -26,6 +26,42 @@
 
 - **Node.js [16.7.0](https://nodejs.org/) or newer** (for `fs.cpSync`, used by the CLI). Check with `node -v`.
 
+Using the skill in Claude (or a compatible assistant) does **not** require Node; Node is only for the optional installer CLI below.
+
+---
+
+## How to use this skill
+
+After you install the skill files into your project (see [Installation](#installation)), load the skill in your assistant and **talk to it in natural language**. The skill defines **how** to think (system prompt pattern, mandatory brief sections, tone rules)—it is not a hosted service you “log into.”
+
+**Two typical asks:**
+
+1. **Build / configure the agent** — You want the HTML prototype guidance, filled system prompt, and roadmap (for demos or handoff).
+2. **Run this week’s brief** — You paste **trends**, **events**, **competitors**, **brand context**, and optionally **`custom_sources`**; you get one markdown brief in the fixed section order (`outputs.md`).
+
+### Typical workflow
+
+1. **Install** the skill folder into `.claude/skills/living-strategy-agent/` ([manual](#d-manual-installation-no-node) or [CLI](#cli-usage)).
+2. **Provide business context** — industry, markets, cadence, where briefs should go (email, Notion, etc.), and whether the deliverable is internal or client-facing.
+3. **Add sources and scope** — competitors, URLs, handles, communities, newsletters, keywords (`custom_sources` in `inputs.md`) so recommendations stay specific.
+4. **Generate the weekly strategy brief** — paste this week’s signals; ask for the brief only if you do not need a full “build.”
+5. **Refine next week** — share what happened after last week’s top actions (memory); ask for the next brief so recommendations compound.
+
+### Example prompts (copy-paste)
+
+These mirror **[`.claude/skills/living-strategy-agent/examples.md`](.claude/skills/living-strategy-agent/examples.md)** — use that file for the full catalog (industries, custom sources, memory, constraints).
+
+1. **Setup with defaults:**  
+   `Build me a living strategy agent for a consumer brand. Use defaults where I don’t specify.`
+
+2. **This week’s brief only:**  
+   `Using the living strategy skill, produce this week’s strategy brief. Trends: … Events: … Competitors: … Brand context: … Markets: UAE and KSA.`
+
+3. **Custom sources + weekly brief:**  
+   `Weekly brief. Track these explicitly in your analysis: our site https://ourbrand.com, competitor Instagram @rival_gcc, newsletter “Retail Gulf Digest”. Here’s what we saw this week: …`
+
+**Full scenarios, industry-specific prompts, and output constraints** → [`examples.md`](.claude/skills/living-strategy-agent/examples.md).
+
 ---
 
 ## Installation

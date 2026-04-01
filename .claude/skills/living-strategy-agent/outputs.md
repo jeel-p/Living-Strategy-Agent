@@ -2,6 +2,8 @@
 
 Every weekly strategy brief **must** use exactly these sections, in this order. Do not add top-level sections. Do not skip sections.
 
+For user prompts that stress **brevity**, **email format**, or **geographic scope**, see **`examples.md`** (section “Output-aware examples”) — constraints must still preserve this full structure.
+
 ## Document shape
 
 1. **Title line** — `# [Week headline — one punchy sentence for the single most important insight]`
