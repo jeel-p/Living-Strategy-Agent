@@ -39,6 +39,30 @@ After you install the skill files into your project (see [Installation](#install
 1. **Build / configure the agent** — You want the HTML prototype guidance, filled system prompt, and roadmap (for demos or handoff).
 2. **Run this week’s brief** — You paste **trends**, **events**, **competitors**, **brand context**, and optionally **`custom_sources`**; you get one markdown brief in the fixed section order (`outputs.md`).
 
+### Demo prompt (copy-paste)
+
+After the skill is loaded in your assistant, paste the block below to run a **weekly brief** with realistic GCC skincare context. Edit the bullets to match your brand, or use as-is to see the full brief shape.
+
+```text
+Using the living strategy skill, generate this week’s marketing strategy brief.
+
+Markets: UAE and KSA.
+Industry: consumer brand (skincare).
+
+Trends: TikTok “glass skin” routine clips trending in Dubai; Instagram Reels for SPF + makeup hybrid up week-on-week in Riyadh.
+
+Events: humidity peak season; long weekend inbound tourism bump.
+
+Competitors: Brand X doubled Instagram Stories placements in UAE; Brand Y launched a 7-day UGC challenge on TikTok KSA with two mid-tier creators.
+
+Brand context: we’re protecting margin this month — awareness is OK but prioritize consideration and site visits; ROAS floor 2.0 on paid social.
+
+Name specific platforms and markets in every priority action. Keep the mandatory brief sections and under ~3 minutes to read.
+```
+
+For **setup** (“build the agent”) instead of a weekly brief, try:  
+`Build me a living strategy agent for a consumer skincare brand in UAE and KSA. Use defaults where I don’t specify, and give me the system prompt outline plus roadmap.`
+
 ### Typical workflow
 
 1. **Install** the skill folder into `.claude/skills/living-strategy-agent/` ([manual](#d-manual-installation-no-node) or [CLI](#cli-usage)).
