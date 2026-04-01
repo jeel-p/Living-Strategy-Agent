@@ -1,6 +1,6 @@
 # Install — use this skill in another project
 
-If your environment supports it, you can install via **npx** from GitHub or npm — see the **Install** section in the repository `README.md` (`help`, `install`, `verify`).
+If your environment supports it, you can install via **npx** from GitHub or npm — see the **Install** section in the repository [`README.md`](https://github.com/jeel-p/Living-Strategy-Agent/blob/main/README.md) (`help`, `install`, `verify`).
 
 ## Copy the skill folder
 
@@ -12,7 +12,7 @@ This repository uses the path:
 
 ### Claude Code / OpenClaw-style layouts
 
-1. Clone or copy this repository.
+1. Clone or copy this repository (`git clone https://github.com/jeel-p/Living-Strategy-Agent.git`).
 2. Copy the entire folder `living-strategy-agent/` from `.claude/skills/` into your target project’s `.claude/skills/` directory (create `skills` if needed).
 3. Restart or rescan skills if your tool caches them.
 

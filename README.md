@@ -20,30 +20,38 @@ Teams need recurring strategic direction that stays aligned with **changing mark
 
 ## Install
 
-### Run from GitHub
+Repository: [github.com/jeel-p/Living-Strategy-Agent](https://github.com/jeel-p/Living-Strategy-Agent)
 
-Replace `OWNER/REPO` with this repository’s GitHub path (for example `your-org/living-strategy-agent`):
+### Run from GitHub (`npx`)
 
 ```bash
-npx github:OWNER/REPO help
-npx github:OWNER/REPO install
-npx github:OWNER/REPO verify
+npx github:jeel-p/Living-Strategy-Agent help
+npx github:jeel-p/Living-Strategy-Agent install
+npx github:jeel-p/Living-Strategy-Agent verify
 ```
+
+*(Requires a published CLI in this repo; if those commands are not available yet, use [manual install](#manual-install) below.)*
 
 ### Run from npm (when published)
 
-If this package is published to npm, use its package name in place of `PACKAGE_NAME`:
+If this package is published to npm under a package name, use that name instead of the placeholder:
 
 ```bash
-npx PACKAGE_NAME help
-npx PACKAGE_NAME install
-npx PACKAGE_NAME verify
+npx <package-name> help
+npx <package-name> install
+npx <package-name> verify
 ```
 
 ### Manual install
 
-1. Clone or download this repository.
-2. Copy `.claude/skills/living-strategy-agent/` into your project’s `.claude/skills/` directory (see `install.md`).
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jeel-p/Living-Strategy-Agent.git
+   cd Living-Strategy-Agent
+   ```
+
+2. Copy `.claude/skills/living-strategy-agent/` into your project’s `.claude/skills/` directory (see [`install.md`](.claude/skills/living-strategy-agent/install.md)).
 
 ## Use
 
