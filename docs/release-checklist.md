@@ -12,6 +12,7 @@ Use before tagging or `npm publish`.
 
 ## Publish to npm (optional)
 
+- [ ] Package name `living-strategy-agent` is available on the registry (or rename in `package.json`).
 - [ ] Logged in: `npm whoami`.
 - [ ] `npm publish` (uses `prepack` → `verify`).
 - [ ] Confirm package page: `https://www.npmjs.com/package/living-strategy-agent` (after first publish).

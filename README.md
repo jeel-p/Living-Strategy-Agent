@@ -30,15 +30,17 @@
 
 ## Installation
 
-There are three supported paths: **local CLI** (clone), **`npx` from GitHub**, and **`npx` from npm** (after you publish). **Manual copy** remains a first-class fallback.
+You can install the skill in **four** ways: **clone + CLI**, **`npx` from GitHub**, **`npx` from npm** (after publish), and **manual copy** (no Node). Pick one.
 
 ### A. Clone and use the CLI locally (recommended for development)
+
+This package has **no npm dependencies**—the CLI uses only Node built-ins. You do **not** need `npm install` unless you want `npm link` or to rely on `npm run` scripts.
 
 ```bash
 git clone https://github.com/jeel-p/Living-Strategy-Agent.git
 cd Living-Strategy-Agent
-npm install   # optional: no dependencies; install links bin if you use npm link
 node bin/living-strategy-agent.js help
+# optional: npm link   # then use `living-strategy-agent` on your PATH
 ```
 
 Install the skill into **another** project (current directory by default):
@@ -52,7 +54,7 @@ living-strategy-agent install --target /path/to/your-project
 
 ### B. `npx` from GitHub (no global install)
 
-Works **now**, as long as the repo contains a valid `package.json` and `bin` (this repo does). npm downloads the package and runs the CLI (needs **network**):
+You can run the CLI **without publishing to npm** by letting `npx` fetch this repo from GitHub (needs **network**). That relies on npm’s support for the `github:` specifier (typical in **npm 7+**; use a current LTS Node/npm if unsure):
 
 ```bash
 npx github:jeel-p/Living-Strategy-Agent help
@@ -61,7 +63,7 @@ npx github:jeel-p/Living-Strategy-Agent verify
 npx github:jeel-p/Living-Strategy-Agent doctor
 ```
 
-**Caveat:** `npx github:…` behavior depends on your **npm** version; if a command fails, use **clone + local bin** or **publish to npm** (below).
+**Limits:** Behavior varies by **npm major version** and CLI flags (`npx` may prompt to install—use `npx --yes …` in CI). If `github:` fails, use **section A** (clone + `node bin/…`) or publish and use **section C**.
 
 ### C. `npx` from npm (after you publish)
 
@@ -73,7 +75,7 @@ npx living-strategy-agent install --target .
 npx living-strategy-agent verify
 ```
 
-Until publish, prefer **B** or **A**.
+Until publish, prefer **A** (most reliable) or **B** if `npx github:` works on your machine.
 
 ### D. Manual installation (no Node)
 
@@ -169,7 +171,7 @@ Python scripts under `optional-runtime/` are **optional** reference code (brief 
 | Issue | What to do |
 |-------|------------|
 | `npx github:…` fails | Use a current npm, or clone the repo and run `node bin/living-strategy-agent.js …`. |
-| Install refuses to overwrite | Pass `--force`, or delete ` .claude/skills/living-strategy-agent/` first. |
+| Install refuses to overwrite | Pass `--force`, or remove `.claude/skills/living-strategy-agent/` first. |
 | Verify fails on target | Re-run `install` from a full clone; check paths with `doctor`. |
 | Wrong folder | `install` / `doctor` use the **current working directory** unless you pass `--target`. |
 

@@ -6,7 +6,7 @@ How users can get the skill and CLI, and what to expect.
 |--------|---------------|------------|--------------|------------------------------|--------|
 | Manual copy | Only for `git clone` | No | No | Yes (by hand) | Copy `.claude/skills/living-strategy-agent/`. |
 | Clone + `node bin/...` | Clone only | Yes (≥ 16.7) | Run via path | Yes (`install`) | Full control; no npm publish required. |
-| `npx github:jeel-p/Living-Strategy-Agent` | Yes | Yes | Yes | Yes (`install`) | Depends on npm/npx resolving GitHub spec. |
+| `npx github:jeel-p/Living-Strategy-Agent` | Yes | Yes | Yes | Yes (`install`) | Needs npm with `github:` support (commonly npm 7+); may prompt unless `npx --yes`. |
 | `npm link` (in clone) | No | Yes | Global-like | Yes | For local dev. |
 | `npx living-strategy-agent` | Yes | Yes | Yes | Yes | **After** package is published to npm. |
 

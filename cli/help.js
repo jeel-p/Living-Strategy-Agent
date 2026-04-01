@@ -22,11 +22,12 @@ function run() {
   logger.line('  living-strategy-agent doctor');
   logger.line('  living-strategy-agent export --out ./dist/living-strategy-agent');
   logger.line('');
-  logger.line('GitHub (npx runs the CLI from the repo; requires network):');
+  logger.line('GitHub via npx (needs network; requires npm that supports github: spec, e.g. npm 7+):');
   logger.line('  npx github:jeel-p/Living-Strategy-Agent help');
   logger.line('  npx github:jeel-p/Living-Strategy-Agent install --target .');
+  logger.line('If that fails, clone the repo and run: node bin/living-strategy-agent.js help');
   logger.line('');
-  logger.line('npm (after you publish the package):');
+  logger.line('npm registry (after package is published):');
   logger.line('  npx living-strategy-agent help');
 }
 

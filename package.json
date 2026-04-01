@@ -38,6 +38,7 @@
     "CLAUDE.md",
     "README.md",
     "LICENSE",
+    "CHANGELOG.md",
     "package.json"
   ],
   "scripts": {
