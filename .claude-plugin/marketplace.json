@@ -1,0 +1,17 @@
+{
+  "name": "living-strategy-agent",
+  "owner": {
+    "name": "jeel-p"
+  },
+  "metadata": {
+    "description": "Living Strategy Agent — multi-source weekly intelligence, content calendars, Reddit/Quora + Google Trends skills, strategist agent"
+  },
+  "plugins": [
+    {
+      "name": "living-strategy-plugin",
+      "source": "./plugins/living-strategy-plugin",
+      "description": "Weekly intelligence run: Reddit, Quora, trends, news, SOT; LinkedIn + blog calendars; reddit_quora + google_trends_report skills; marketing-strategist agent.",
+      "version": "1.1.0"
+    }
+  ]
+}

@@ -90,7 +90,7 @@ These mirror **[`.claude/skills/living-strategy-agent/examples.md`](.claude/skil
 
 ## Installation
 
-You can install the skill in **four** ways: **clone + CLI**, **`npx` from GitHub**, **`npx` from npm** (after publish), and **manual copy** (no Node). Pick one.
+You can install the skill in **six** ways: **clone + CLI**, **`npx` from GitHub**, **`npx` from npm** (after publish), **manual copy** (no Node), **OpenClaw paste bundle**, and **Claude Code plugin** (see below). Pick one.
 
 ### A. Clone and use the CLI locally (recommended for development)
 
@@ -143,6 +143,38 @@ Until publish, prefer **A** (most reliable) or **B** if `npx github:` works on y
 2. Copy `.claude/skills/living-strategy-agent/` into your project’s `.claude/skills/` directory.
 3. See [`.claude/skills/living-strategy-agent/install.md`](.claude/skills/living-strategy-agent/install.md).
 
+### E. OpenClaw (copy-paste bundle)
+
+Use **[`openclaw/`](openclaw/)**: copy **`living-strategy-agent/`** and/or **`google_trends_report/`** into your OpenClaw skills directory (see [`openclaw/README.md`](openclaw/README.md)). After editing skills under `.claude/skills/`, run **`npm run sync:openclaw`** to refresh the bundle.
+
+### F. Claude Code plugin (namespaced slash skills)
+
+The repo includes a **local marketplace** at **[`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json)** (plugin **v1.1+**: weekly orchestrator, **Reddit/Quora** skill, **Google Trends** skill, LinkedIn + blog calendars). Copying a folder into `~/.claude/plugins/` alone **does not** register it.
+
+**Install (inside Claude Code):**
+
+```text
+/plugin marketplace add /path/to/Living-Strategy-Agent
+/plugin install living-strategy-plugin@living-strategy-agent
+/reload-plugins
+```
+
+**Update after changes:**
+
+```text
+/plugin marketplace update living-strategy-agent
+/plugin install living-strategy-plugin@living-strategy-agent
+/reload-plugins
+```
+
+**One-session dev load:**
+
+```bash
+claude --plugin-dir ./plugins/living-strategy-plugin
+```
+
+**Skills:** `/living-strategy-plugin:weekly-brief`, `:reddit_quora_market_intelligence`, `:google_trends_report`, `:setup`; agent **marketing-strategist**. Details: [`plugins/living-strategy-plugin/README.md`](plugins/living-strategy-plugin/README.md).
+
 ---
 
 ## CLI usage
@@ -154,6 +186,8 @@ Until publish, prefer **A** (most reliable) or **B** if `npx github:` works on y
 | `living-strategy-agent verify` | Check required files (this package or `--target`) |
 | `living-strategy-agent doctor` | Environment / path sanity checks |
 | `living-strategy-agent export` | Write `dist/living-strategy-agent/` bundle (skill + `skill.json` + `CLAUDE.md`) |
+
+**npm script:** `npm run sync:openclaw` — refreshes [`openclaw/living-strategy-agent/`](openclaw/) from `.claude/skills/living-strategy-agent/` (plus `skill.json` / `CLAUDE.md` / `LICENSE` in `openclaw/`).
 
 **Install flags:**
 
@@ -204,6 +238,10 @@ Living-Strategy-Agent/
   bin/living-strategy-agent.js
   cli/                      # help, install, verify, doctor, export
   lib/                      # installer, verifier, paths, logger, cli router
+  scripts/                  # sync-openclaw.js
+  .claude-plugin/           # marketplace.json (Claude Code: install living-strategy-plugin@living-strategy-agent)
+  openclaw/                 # paste bundle: living-strategy-agent + google_trends_report (see openclaw/README.md)
+  plugins/living-strategy-plugin/   # Claude Code plugin (.claude-plugin + skills + agents)
   skill.json
   CLAUDE.md
   CHANGELOG.md

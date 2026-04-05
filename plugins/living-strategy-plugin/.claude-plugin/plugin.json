@@ -1,0 +1,20 @@
+{
+  "name": "living-strategy-plugin",
+  "description": "Living Strategy Agent: weekly multi-source intelligence (Reddit, Quora, trends, news, SOT), second-order reasoning, LinkedIn + blog content calendars, and strategist subagent.",
+  "version": "1.1.0",
+  "author": {
+    "name": "jeel-p"
+  },
+  "homepage": "https://github.com/jeel-p/Living-Strategy-Agent",
+  "repository": "https://github.com/jeel-p/Living-Strategy-Agent",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "strategy",
+    "brief",
+    "weekly",
+    "trends",
+    "openclaw",
+    "claude-code"
+  ]
+}

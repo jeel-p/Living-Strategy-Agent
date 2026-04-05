@@ -33,7 +33,11 @@
     "bin",
     "cli",
     "lib",
+    "scripts",
     ".claude",
+    ".claude-plugin",
+    "openclaw",
+    "plugins",
     "skill.json",
     "CLAUDE.md",
     "README.md",
@@ -45,6 +49,7 @@
     "verify": "node bin/living-strategy-agent.js verify",
     "doctor": "node bin/living-strategy-agent.js doctor",
     "export": "node bin/living-strategy-agent.js export",
+    "sync:openclaw": "node scripts/sync-openclaw.js",
     "prepack": "node bin/living-strategy-agent.js verify"
   },
   "publishConfig": {

@@ -1,0 +1,38 @@
+{
+  "name": "google_trends_report",
+  "version": "1.0.0",
+  "description": "Trend intelligence report from a company website URL using web fetch and search (Google Trends–style research). Requires connected runtime with search + URL fetch.",
+  "license": "MIT",
+  "triggers": [
+    "google trends report",
+    "trend analysis for url",
+    "check trends for website",
+    "what's trending in my industry",
+    "competitor trend insights",
+    "trending topics for my business"
+  ],
+  "when_to_use": [
+    "User provides a company website URL and wants trend or industry momentum insight",
+    "User asks what to focus on based on trends for their business",
+    "User combines a URL with market research, trends, or Google Trends language"
+  ],
+  "tags": [
+    "google-trends",
+    "trends",
+    "market-research",
+    "seo",
+    "competitive-intelligence",
+    "web-fetch",
+    "web-search",
+    "openclaw",
+    "url",
+    "company-research"
+  ],
+  "paths": {
+    "skill_md": ".claude/skills/google_trends_report/SKILL.md"
+  },
+  "requirements": {
+    "tools": ["web_search", "url_fetch_or_browser"],
+    "notes": "Not a substitute for the official Google Trends API unless the host integrates it; uses search-backed directional signals."
+  }
+}
