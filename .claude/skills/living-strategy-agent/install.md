@@ -16,6 +16,8 @@ This repository uses the path:
 2. Copy the entire folder `living-strategy-agent/` from `.claude/skills/` into your target project’s `.claude/skills/` directory (create `skills` if needed).
 3. Restart or rescan skills if your tool caches them.
 
+**OpenClaw with internet / MCP:** Enable **web search**, **URL fetch**, or any research MCP your host supports so the skill can **ground** weekly briefs (see **OpenClaw and tool-capable runtimes** in `SKILL.md`). The skill text does not add network by itself—the **host** must expose tools. If tools are off, behavior falls back to pasted inputs only.
+
 Resulting path in the **destination** project:
 
 ```text
@@ -39,4 +41,4 @@ Python helpers and prompt files live in this repo under `optional-runtime/`. Cop
 
 ## No environment required
 
-The skill instructions themselves do **not** need `.env`, a database, or a server. Any API keys apply only if you choose to run `optional-runtime` scripts or a custom prototype that calls an API.
+The skill instructions themselves do **not** need `.env`, a database, or a server. **Networked research** uses the host’s tools (OpenClaw, browser MCP, etc.), not credentials inside this folder. Any API keys apply only if you choose to run `optional-runtime` scripts or a custom prototype that calls an API.

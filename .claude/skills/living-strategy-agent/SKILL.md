@@ -2,8 +2,11 @@
 name: living-strategy-agent
 description: >
   Builds a "living strategy agent" — an AI-powered workflow that turns weekly trend signals into
-  actionable marketing strategy briefs. Use for weekly marketing briefs, trend monitoring, competitive
-  intelligence, automated strategy advice, or any request to watch trends and tell a team what to do next.
+  actionable marketing strategy briefs. Optimized for OpenClaw, Claude Code, and other hosts that load
+  `.claude/skills/`; when web search, URL fetch, browser, or MCP tools are available, the agent MUST use
+  them to ground trends and custom_sources before writing the brief. Use for weekly marketing briefs,
+  trend monitoring, competitive intelligence, automated strategy advice, or any request to watch trends
+  and tell a team what to do next.
 ---
 
 # Living Strategy Agent
@@ -20,6 +23,30 @@ Produce a **living strategy agent**: an AI workflow that ingests recurring trend
 4. **Supporting guidance** — Sheet column layout, memory MVP (files/Sheet tab), delivery options (Notion/Email/Slack/Web).
 
 This skill is **usable without any backend, database, API server, or `.env`**. Automation code is optional and lives outside the core skill behavior.
+
+---
+
+## OpenClaw and tool-capable runtimes
+
+**OpenClaw** and similar agent hosts load skills from `.claude/skills/<name>/` and often expose **web search**, **URL fetch / content extraction**, **browser automation**, or **MCP** tools. When any of these are available, treat this workflow as a **connected** living strategy agent: **ground** the brief in fresh evidence—not model weights alone.
+
+### Mandatory behavior when internet or tools are available
+
+1. **Verify time-sensitive claims** — Before finalizing **Trend signals**, use search or fetch to check trends, competitor moves, platform or policy changes, and named **markets** / **industry** context for this week. Prefer sources from the last few days to two weeks when the topic is fast-moving.
+2. **Refresh `custom_sources`** — For **websites**, **competitors**, and high-stakes **keywords**, use fetch or search so recommendations reflect **current** landing pages, messaging, or public positioning—not stale recall.
+3. **No fabricated metrics** — If tools return no solid data, say so briefly, downgrade **signal strength** to **WATCH**, or mark gaps **`[UNVERIFIED]`**. Do not invent statistics, rankings, or dates.
+4. **Light attribution** — Where verification changed the read, add a short in-line note (e.g. domain + date) inside **Strategic read** or a bullet under **Trend signals**—**without** adding new top-level sections to the brief.
+5. **Host policy** — Obey the user’s tool permissions, blocklists, and rate limits. If search or fetch is unavailable or blocked, state that once and proceed from **user-pasted** inputs only.
+
+### Tool order (when multiple exist)
+
+1. **Web search** — Broad queries (market + trend + recent window).  
+2. **URL fetch / MCP extract** — Specific pages from `custom_sources` or competitor URLs.  
+3. **Browser tools** — JS-heavy pages or when fetch returns incomplete content.
+
+### When tools are not available
+
+Use the **manual MVP** path: rely on pasted **trends**, **events**, **competitors**, **brand context**, and **`[INFERRED]`** labeling per **`source_scope`**—unchanged from offline use.
 
 ---
 
@@ -52,7 +79,7 @@ Ask the user for anything missing:
 | `cadence` | Weekly (default), Bi-weekly, Monthly |
 | `output_format` | Notion, Email, Slack, PDF, Web viewer |
 | `client_type` | Internal team vs external client deliverable |
-| `data_sources` | Free (Google Trends, social), paid APIs, manual research |
+| `data_sources` | Free (Google Trends, social), paid APIs, manual research; **in OpenClaw / tool-capable hosts:** live web search + URL fetch when enabled |
 
 ### Defaults if the user says “just build it”
 
@@ -60,7 +87,7 @@ Ask the user for anything missing:
 - **Markets:** Generic / configurable  
 - **Cadence:** Weekly  
 - **Output:** Web viewer + Email  
-- **Data sources:** Manual inputs (MVP approach)
+- **Data sources:** Manual inputs (MVP approach), unless the host exposes web/tools—then **use tools** per **OpenClaw and tool-capable runtimes** above
 
 ---
 
@@ -204,6 +231,7 @@ When delivering results to the user:
 - [ ] System prompt is **versioned/exported separately** from UI code (naming convention below).
 - [ ] User understands the **system prompt is their IP** and should be protected.
 - [ ] If **`custom_sources`** was provided: brief **names those sources** where relevant and does not replace them with vague labels; **`[INFERRED]`** used when scope is `provided_only` or when extrapolating beyond the list.
+- [ ] If **web/tools were available**: time-sensitive points were **checked** or gaps labeled **`[UNVERIFIED]`**—no invented metrics.
 
 ---
 
@@ -232,6 +260,11 @@ CUSTOM SOURCES POLICY (apply when the user provides custom_sources in the weekly
 - Do not collapse named sources into generic terms ("competitors," "social," "the market") when specific names were supplied.
 - Preserve platform names, handles, URLs, subreddit names, and newsletter titles as written when discussing them.
 - Distinguish claims grounded in user-provided source lists from general market inference. When the user sets source_scope to provided_only, treat custom_sources as the exclusive monitoring set for the run and label broader extrapolation as [INFERRED].
+
+CONNECTED RUNTIME — apply when the assistant has web search, URL fetch, browser, or MCP research tools (e.g. OpenClaw with network enabled):
+- Before finalizing the brief, use available tools to verify time-sensitive claims and to refresh key URLs or names from custom_sources when current facts matter for strategy.
+- Do not invent statistics or dates; use signal strength WATCH or mark [UNVERIFIED] when evidence is missing.
+- Optionally note verification (e.g. source domain, date) in-line in Strategic read or Trend signals only—do not add sections beyond the mandatory structure.
 
 {{#if PAST_BRIEFS}}
 CONTEXT FROM PREVIOUS WEEKS:

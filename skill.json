@@ -1,7 +1,7 @@
 {
   "name": "living-strategy-agent",
   "version": "1.0.0",
-  "description": "Builds a living strategy agent that turns weekly trend signals into prioritized, repeatable marketing strategy briefs with a fixed section structure, strong specificity rules, and optional memory across weeks.",
+  "description": "Builds a living strategy agent that turns weekly trend signals into prioritized, repeatable marketing strategy briefs with a fixed section structure, strong specificity rules, and optional memory across weeks. In OpenClaw and other tool-capable hosts, instructs use of web search, URL fetch, browser, or MCP tools to ground trends and custom_sources before writing the brief.",
   "author": "",
   "license": "MIT",
   "triggers": [
@@ -13,13 +13,16 @@
     "automated strategy",
     "competitive intelligence agent",
     "market changes",
-    "real-time marketing guidance"
+    "real-time marketing guidance",
+    "openclaw",
+    "ground trends with web search"
   ],
   "when_to_use": [
     "User wants an AI or workflow that monitors trends and recommends actions",
     "User wants weekly or recurring marketing strategy briefs",
     "User wants to automate or structure competitive intelligence into next steps",
-    "User describes struggling to keep up with market or cultural shifts"
+    "User describes struggling to keep up with market or cultural shifts",
+    "User runs the skill in OpenClaw or another host with web/MCP tools and wants live-grounded briefs"
   ],
   "tags": [
     "marketing",
@@ -35,8 +38,17 @@
     "custom-sources",
     "watchlist",
     "urls",
-    "social-handles"
+    "social-handles",
+    "openclaw",
+    "web-search",
+    "mcp",
+    "url-fetch",
+    "research"
   ],
+  "connected_runtime": {
+    "description": "When the host exposes web search, URL fetch, browser, or MCP research tools, the skill requires grounding time-sensitive signals and custom_sources before finalizing the brief; see SKILL.md section 'OpenClaw and tool-capable runtimes'.",
+    "fallback": "Without tools, use pasted trends/events/competitors/brand_context only (manual MVP path)."
+  },
   "inputs": {
     "required_for_tailoring": [
       "industry",

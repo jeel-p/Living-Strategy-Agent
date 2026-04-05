@@ -11,7 +11,7 @@ Prompt patterns that use these fields (including `custom_sources`) are in **`exa
 | **cadence** | Weekly (default), bi-weekly, or monthly. |
 | **output_format** | Where briefs go: Notion, Email, Slack, PDF, Web viewer. |
 | **client_type** | Internal team vs external client-facing deliverable. |
-| **data_sources** | What signals feed the agent: free tools, paid APIs, manual research, etc. |
+| **data_sources** | What signals feed the agent: free tools, paid APIs, manual research, etc. **In OpenClaw or any host with web/MCP tools**, include live **search + URL fetch** for grounding (see **OpenClaw and tool-capable runtimes** in `SKILL.md`). |
 
 ## Custom sources (`custom_sources`) — optional but recommended when users name URLs, handles, or watchlists
 
@@ -66,7 +66,7 @@ If the user does not specify:
 - **Markets:** Generic / configurable  
 - **Cadence:** Weekly  
 - **Output:** Web viewer + Email  
-- **Data sources:** Manual inputs (MVP)
+- **Data sources:** Manual inputs (MVP), or **live web + fetch** when the runtime exposes those tools (default for connected OpenClaw-style runs)
 
 ## Client profile fields (embedded in system prompt)
 

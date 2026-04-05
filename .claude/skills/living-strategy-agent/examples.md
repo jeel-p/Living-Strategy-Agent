@@ -23,6 +23,9 @@ Copy-paste any of these to get started fast:
 3. **Tight geography:**  
    `Weekly marketing brief for our brand — focus only on UAE and KSA. Name TikTok and Instagram Reels with the market in every action. Here’s this week’s intel: …`
 
+4. **OpenClaw / connected runtime (use web tools first):**  
+   `Weekly living strategy brief. You have search and URL fetch — verify anything time-sensitive for UAE/KSA before you write. Trends: [paste rough signals]. Competitors: [names or URLs]. Brand context: [paste]. custom_sources: { "websites": ["https://…"], "keywords": ["…"] }. Ground the Trend signals in what you find; mark [UNVERIFIED] if you cannot verify.`
+
 ---
 
 ## Common usage

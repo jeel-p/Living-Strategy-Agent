@@ -61,3 +61,11 @@
 **Symptom:** User thinks they must run Python or set up Supabase to “use” the skill.
 
 **Fix:** Clarify: the **skill** is the instructions and templates. **optional-runtime/** is for advanced automation only.
+
+---
+
+## OpenClaw: briefs feel stale or offline-only
+
+**Symptom:** Trend signals read like generic training data; URLs in `custom_sources` were not checked.
+
+**Fix:** In OpenClaw (or the host), enable **web search**, **URL fetch**, or **MCP** tools per your project settings. The skill instructs the model to **use** those tools when present—see **OpenClaw and tool-capable runtimes** in `SKILL.md`. If tools are disabled, only pasted inputs apply.
